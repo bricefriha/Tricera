@@ -6,8 +6,17 @@ This project is highly inspired by [Trex](https://github.com/crewdevio/Trex) but
 
 ## Documentation
 
-### Installation
-> not available yet, star the repo so you get to know when it's available
+### Setup
+For starters, make sure you have Deno set up on your machine (duh).
+
+#### Linux:
+Just add a new alias for it
+``` 
+alias tricera='deno run https://raw.githubusercontent.com/bricefriha/Tricera/main/cli.ts'
+```
+
+#### Windows:
+> use linux
 
 ### Create a project
 
