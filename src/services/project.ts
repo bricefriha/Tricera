@@ -7,8 +7,8 @@ export async function Create(name: string): Promise<string> {
     const workDir = Deno.cwd();
     const projectDir = `${workDir}\\${name}`;
     await Deno.mkdir(projectDir);
-    const file = await Deno.create(`${projectDir}\\nest.json`);
-    const gitignore = await Deno.create(`${projectDir}\\.gitignore`);
+    const file = await Deno.create(`${projectDir}/nest.json`);
+    const gitignore = await Deno.create(`${projectDir}/.gitignore`);
 
     // Wirte the config file
     const writerNest = file.writable.getWriter();
