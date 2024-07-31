@@ -1,29 +1,16 @@
-import * as Project from "./src/services/project.ts";
+import * as Core from "./src/controllers/core.ts";
 function Main() {
     const Args = Deno.args;
-    if (Args[0] === "--create") {
-        let name: string = "";
-        const defaultName: string = "IDontKnowWhatNameToGiveSoThereYouHaveIt";
-        if (Args[1]) {
-            name = Args[1];
-        }
+    switch (Args[0]) {
+        case "--create":
+            Core.createProject(Args);
+            break;
+        case "--add":
+            Core.addPackage(Args[1]);
+            break;
 
-        if (name) {
-            Project.Create(name);
-            return;
-        }
-
-        if (!name || !Args[1]?.includes("--")) {
-            name = prompt("Please, enter a name for your project: ") ?? "";
-        }
-        if (name) {
-            Project.Create(name);
-            return;
-        }
-        if (defaultName) {
-            Project.Create(defaultName);
-        }
+        default:
+            break;
     }
 }
-
 Main();

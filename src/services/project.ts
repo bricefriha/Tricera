@@ -2,7 +2,7 @@
  * Create a project
  * @param name name of the project
  */
-export async function Create(name: string): Promise<string> {
+export async function create(name: string): Promise<string> {
     // Get current directory
     const workDir = Deno.cwd();
     const projectDir = `${workDir}\\${name}`;
@@ -12,11 +12,15 @@ export async function Create(name: string): Promise<string> {
 
     // Wirte the config file
     const writerNest = file.writable.getWriter();
-    await writerNest.write(new TextEncoder().encode(JSON.stringify({
-        modules: [
-            { "thesesNuts": 4.4 },
-        ],
-    })));
+    await writerNest.write(new TextEncoder().encode(JSON.stringify(
+        {
+            modules: [
+                { "thesesNuts": 4.4 },
+            ],
+        },
+        null,
+        4,
+    )));
     await writerNest.close();
 
     // Wirte the config file
