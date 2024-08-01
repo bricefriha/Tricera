@@ -26,7 +26,7 @@ export function createProject(args: Array<string>) {
 }
 export function addPackage(input: string) {
     const pkManager = input.split(":")[0];
-    if (input.includes("@")) {
+    if (!input.includes("@")) {
         Package.add(pkManager, input.split(":")[1]);
         return;
     }
@@ -34,4 +34,12 @@ export function addPackage(input: string) {
     const version = input.split(":")[1].split("@")[1];
 
     Package.add(pkManager, name, version);
+}
+export function removePackage(input: string) {
+    if (!input.includes("@") && !input.includes(":")) {
+        Package.remove(input);
+        return;
+    }
+
+    Package.remove(input.split(":")[1].split("@")[0]);
 }

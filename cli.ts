@@ -8,6 +8,9 @@ function Main() {
         case "--add":
             Core.addPackage(Args[1]);
             break;
+        case "--remove":
+            Core.removePackage(Args[1]);
+            break;
 
         default:
             break;

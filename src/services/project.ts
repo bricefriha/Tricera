@@ -14,9 +14,7 @@ export async function create(name: string): Promise<string> {
     const writerNest = file.writable.getWriter();
     await writerNest.write(new TextEncoder().encode(JSON.stringify(
         {
-            modules: [
-                { "thesesNuts": 4.4 },
-            ],
+            modules: [],
         },
         null,
         4,
