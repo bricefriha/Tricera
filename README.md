@@ -12,7 +12,7 @@ For starters, make sure you have Deno set up on your machine (duh).
 #### Linux:
 Just add a new alias for it
 ``` 
-alias tricera='deno run https://raw.githubusercontent.com/bricefriha/Tricera/main/cli.ts'
+alias tricera='deno run --allow-read --allow-write https://raw.githubusercontent.com/bricefriha/Tricera/main/cli.ts'
 ```
 
 #### Windows:
